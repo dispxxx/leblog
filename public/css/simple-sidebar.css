@@ -95,8 +95,25 @@
     color: #fff;
     background: none;
 }
+.icon-menu a{
+    color: #ffffff;
+    margin:20px 30px 0;
+    display: block;
+    font-size:3rem;
+}
+.header h1 {
+    font-size:6rem;
+    text-transform: uppercase;
+    font-weight:bold;
+}
+.header {
+    height: 250px;
+    margin:-20px -35px 50px;
+    padding-top:20px;
+    background: #607D8B url('../img/bg.png') repeat;
+    color: #fff;
+}
 
-@media(min-width:768px) {
     #wrapper {
         padding-left: 250px;
     }
@@ -122,4 +139,3 @@
         position: relative;
         margin-right: 0;
     }
-}
