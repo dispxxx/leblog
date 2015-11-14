@@ -1,10 +1,15 @@
 <?php
 
+session_start();
+
 
 /*
  * Default page
  */
 $page = 'home';
+
+
+
 
 /*
  * Set access
@@ -15,20 +20,50 @@ $access_member = array('messenger', 'profile', 'article_write', 'logout');
 $access_admin = array('dashboard');
 
 
+/*
+ *  Set handlers
+ */
+$handler_visitor = array('login', 'register');
+$handler_member = array('messenger', 'profile', 'article_write', 'comment_write', 'vote_stars', 'logout');
+$handler_admin = array('article_validation', 'article_update', 'article_delete', 'comment_delete', 'user_update_status', 'messenger_user', 'vote_stars_update');
+
+
+
+
+
 if(isset($_GET['page'])){
     if(in_array($_GET['page'], $access)){
         $page = $_GET['page'];
     }
+    /* Soon restrict for visitor*/
     elseif(in_array($_GET['page'], $access_visitor)){
         $page = $_GET['page'];
     }
+    /* Soon restrict for member*/
     elseif(in_array($_GET['page'], $access_member)){
         $page = $_GET['page'];
     }
+    /* Soon restrict for admin */
     elseif(in_array($_GET['page'], $access_admin)){
         $page = $_GET['page'];
     }else{
         $page = "404";
+    }
+
+
+    if(isset($_GET['action'])){
+        /* Soon restrict for visitor */
+        if(in_array($_GET['action'], $handler_visitor)){
+            require('./controllers/handler/handler_'.$_GET['action'].'.php');
+        }
+        /* Soon restrict for member */
+        elseif(in_array($_GET['action'], $handler_member)){
+            require('./controllers/handler/handler_'.$_GET['action'].'.php');
+        }
+        /* Soon restrict for admin */
+        elseif(in_array($_GET['action'], $handler_admin)){
+            require('./controllers/handler/handler_'.$_GET['action'].'.php');
+        }
     }
 
 }

@@ -116,6 +116,13 @@
     background: #607D8B url('../img/bg.png') repeat;
     color: #fff;
 }
+.footer{
+    min-height:50px;
+    margin: 50px -35px 0;
+    padding-top: 15px;
+    background: #607D8B url('../img/bg.png') repeat;
+    color: #fff;
+}
 
 #wrapper {
     padding-left: 250px;
