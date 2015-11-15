@@ -3,70 +3,18 @@ Le Blog
 
 ##Configuration
 
-Afin de faciliter les choses, j'ai configuré la connexion via PDO ( et non mysqli ).
+Afin de faciliter les choses, j'ai configuré la connexion en mysql.
 Vous trouverez dans ce répertoire de fichier "blog_unk.sql" pour recréer la base de donnée de travail.
 
 ##Une fois cette base installé.
 Afin de vous y connecter avec PHP, vous n'aurez qu'à modifier si besoin le fichier "init_database.php".
-
-Vous pouvez vous servir de la manière PDO comme suit:
-
-
-### SELECT
-    $nomDeVariable = $db->query('SELECT * FROM table);
-
-    //Utilisation...
-
-    //Exemple 1:
-     $data = $nomDeVariable->fetch();
-     echo $data['colonneTable'];
-
-    //Exemple 2:
-     while($reponse = $nomDeVariable->fetch()){
-        echo $reponse['colonneTable'];
-     }
-
-    //Puis toujours clôturer quand vous avez fini votre traitement avec la db
-     $query->closeCursor();
-
-### INSERT INTO
-
-    $db->exec('INSERT INTO table(colonneTable) VALUE ("Contenu crée") );
-
-    //Puis toujours clôturer quand vous avez fini votre traitement avec la db
-    $db->closeCursor();
-
-### UPDATE
-
-    $db->exec('UPDATE table SET colonneTable = "Contenu maj" WHERE id = 1);
-
-    //Puis toujours clôturer quand vous avez fini votre traitement avec la db
-    $db->closeCursor();
-
-
-### DELETE FROM
-
-    $db->exec('DELETE FROM table WHERE id = 1);
-
-    //Puis toujours clôturer quand vous avez fini votre traitement avec la db
-    $db->closeCursor();
 
 
 ####Dernier point important
 
 La sécurisation des données envoyé par l'utilisateur sur le serveur.
 
-    mysqli_real_escape_string est remplacé par quote
-
-Exemple :
-
-**Avant**
-
-'DELETE FROM table WHERE name = ' .mysqli_real_escape_string($string) ;
-
-**Maintenant**
-
-'DELETE FROM table WHERE name = '.$db->quote($string) ;
+    mysqli_real_escape_string a ne pas oublier.
 
 
 
