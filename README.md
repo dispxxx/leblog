@@ -75,10 +75,11 @@ Exemple :
 ##Les constantes
 
 ###STATUS
-STATUS_MEMBER       -> Définie la valeur qui correspond au statut membre
-STATUS_ADMIN        -> Définie la valeur qui correspond au statut admin
-STATUS_BAN_TEMP     -> Définie la valeur qui correspond au statut bannit temporairement
-STATUS_BAN_PERM     -> Définie la valeur qui coreespond au statut bannit indéfiniment
+
++STATUS_MEMBER       -> Définie la valeur qui correspond au statut membre
++STATUS_ADMIN        -> Définie la valeur qui correspond au statut admin
++STATUS_BAN_TEMP     -> Définie la valeur qui correspond au statut bannit temporairement
++STATUS_BAN_PERM     -> Définie la valeur qui coreespond au statut bannit indéfiniment
 
 __Note: STATUS_BAN_PERM < STATUS_BAN_TEMP < STATUS_MEMBER < STATUS_ADMIN__.
 
