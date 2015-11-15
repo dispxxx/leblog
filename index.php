@@ -5,17 +5,21 @@ session_start();
 /*
  * Connect to db
  */
+require('init_database.php');
+
 try
 {
-    $db = new PDO('mysql:host=localhost;dbname=blog_unk;charset=utf8', 'root', '');
+    $db = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME.';charset=utf8', DB_USERNAME, DB_PASSWORD);
 }
 catch (Exception $e)
 {
     die('Erreur : ' . $e->getMessage());
 }
 
-
-
+/*
+ * Init constant
+ */
+require('init_const.php');
 
 
 /*
@@ -80,6 +84,5 @@ if (isset($_GET['page'])) {
     }
 
 }
-
 
 require('./controllers/skel.php');
