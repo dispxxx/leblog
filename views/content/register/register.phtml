@@ -6,12 +6,12 @@
             <div class="form-group col-md-6">
                 <label for="email">Adresse email*</label>
                 <input type="email" class="form-control" name="register_email" id="register_email" placeholder="Email"
-                      value="<?php if(isset($email)){echo $email; }?>" required>
+                      value="<?php if(isset($email)){echo htmlentities($email); }?>" required>
             </div>
             <div class="form-group col-md-6">
                 <label for="email">Confirmation adresse email*</label>
                 <input type="email" class="form-control" name="register_email_confirm" id="register_email_confirm"
-                       placeholder="Confirmation email" value="<?php if(isset($email)){echo $email_confirm; }?>" required>
+                       placeholder="Confirmation email" value="<?php if(isset($email)){echo htmlentities($email_confirm); }?>" required>
             </div>
         </div>
         <div class="row">
@@ -33,19 +33,19 @@
             <div class="form-group col-md-6">
                 <label for="name">Nom</label>
                 <input type="text" class="form-control" name="register_name" id="register_name"
-                       placeholder="Compris entre 2 et 30 caractères" value="<?php if(isset($name)){echo $name; }?>">
+                       placeholder="Compris entre 2 et 30 caractères" value="<?php if(isset($name)){echo htmlentities($name); }?>">
             </div>
             <div class="form-group col-md-6">
                 <label for="surname">Prénom</label>
                 <input type="text" class="form-control" name="register_surname" id="register_surname"
-                       placeholder="Compris entre 2 et 30 caractères" value="<?php if(isset($surname)){echo $surname; }?>">
+                       placeholder="Compris entre 2 et 30 caractères" value="<?php if(isset($surname)){echo htmlentities($surname); }?>">
             </div>
         </div>
         <div class="row">
             <div class="form-group col-md-6">
                 <label for="username">Nom d'utilisateur</label>
                 <input type="text" class="form-control" name="register_username" id="register_username"
-                       placeholder="Compris entre 2 et 30 caractères" value="<?php if(isset($username)){echo $username; }?>">
+                       placeholder="Compris entre 2 et 30 caractères" value="<?php if(isset($username)){echo htmlentities($username); }?>">
             </div>
         </div>
         <div class="row">

@@ -1,20 +1,32 @@
 <?php
-
 session_start();
+var_dump($_SESSION);
 
 /*
  * Connect to db
  */
 require('init_database.php');
 
-try
-{
-    $db = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME.';charset=utf8', DB_USERNAME, DB_PASSWORD, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+/*
+ * Methode Mysqli
+ */
+$db = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
+if (mysqli_connect_errno()) {
+    printf("Échec de la connexion : %s\n", mysqli_connect_error());
+    exit();
 }
-catch (Exception $e)
-{
-    die('Erreur : ' . $e->getMessage());
-}
+
+/*
+ * Methode PDO
+ */
+//try
+//{
+//    $db = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME.';charset=utf8', DB_USERNAME, DB_PASSWORD, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+//}
+//catch (Exception $e)
+//{
+//    die('Erreur : ' . $e->getMessage());
+//}
 
 /*
  * Init constant

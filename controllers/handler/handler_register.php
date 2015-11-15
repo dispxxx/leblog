@@ -34,15 +34,27 @@ if(isset($_POST['register_email'], $_POST['register_email_confirm'], $_POST['reg
     /*
      * Email exist
      */
-    $query = $db->prepare('
-    SELECT COUNT(email) FROM user WHERE email = :email
-    ');
-    $query->execute(array('email' => $_POST['register_email']));
-    $reponse = $query->fetch();
-    if($reponse[0]!= 0){
-        $errors[]= "email_exist";
-    }
 
+    /*
+     * Methode pdo
+     */
+//    $query = $db->prepare('
+//    SELECT COUNT(email) FROM user WHERE email = :email
+//    ');
+//    $query->execute(array('email' => $_POST['register_email']));
+//    $reponse = $query->fetch();
+//    if($reponse[0]!= 0){
+//        $errors[]= "email_exist";
+//    }
+
+    /*
+     * Methode mysqli
+     */
+    $query = mysqli_query($db, 'SELECT COUNT(email) FROM user WHERE email = "'. mysqli_escape_string($db, $_POST['register_email']) .'"');
+    $data = mysqli_fetch_assoc($query);
+    if($data['COUNT(email)'] != 0){
+        $errors[] = "email_exist";
+    }
 
 
     /*
@@ -129,27 +141,43 @@ if(isset($_POST['register_email'], $_POST['register_email_confirm'], $_POST['reg
 
 
     if(count($errors) == 0){
+        /*
+         * Methode pdo avec quote
+         */
 //        $query = $db->query('
 //        INSERT INTO user(`name`, surname, email, password, username, status)
 //        VALUES ('. $db->quote($name) .', '. $db->quote($surname) .', '. $db->quote($email) .', '.$password.', '.$db->quote($username).', '.STATUS_MEMBER.')
 //        ');
 
 
+        /*
+         * Methode pdo avec prepare
+         */
+//        $query = $db->prepare('INSERT INTO user(name, surname, email, password, username, status) VALUES (:name, :surname, :email, :password, :username, :status)');
+//        $query->execute(array(
+//           "name" => $name,
+//            "surname" => $surname,
+//            "email" => $email,
+//            "password" => $password,
+//            "username" => $username,
+//            "status" => STATUS_MEMBER
+//        ));
+//        $query->closeCursor();
 
-        $query = $db->prepare('INSERT INTO user(name, surname, email, password, username, status) VALUES (:name, :surname, :email, :password, :username, :status)');
-        $query->execute(array(
-           "name" => $name,
-            "surname" => $surname,
-            "email" => $email,
-            "password" => $password,
-            "username" => $username,
-            "status" => STATUS_MEMBER
-        ));
-        $query->closeCursor();
+        /*
+         * Methode mysqli
+         */
+        $name = mysqli_escape_string($db, $name);
+        $surname = mysqli_escape_string($db, $surname);
+        $email = mysqli_escape_string($db,$email);
+        $username = mysqli_escape_string($db,$username);
 
 
-//        header('Location: ?page=register&success=true');
-//        exit;
+        $query = mysqli_query($db, 'INSERT INTO user(name, surname, email, password, username, status)
+                                    VALUES ("'.$name.'", "'.$surname.'", "'.$email.'", "'.$password.'", "'.$username.'", '.STATUS_MEMBER.')');
+
+        header('Location: ?page=register&success=true');
+        exit;
     }
 
 
