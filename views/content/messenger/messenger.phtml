@@ -1,1 +1,36 @@
-<h2>messenger</h2>
+<h2>Boîte de réception</h2>
+<div class="container">
+	<div class="row">
+		<h3>Rédiger un message</h3>
+		<form action="?page=messenger&action=messenger" type="post">
+			<div class="form-group col-xs-12 col-sm-6">
+				<label for="msg-subject">Sujet</label>
+				<input type="text" class="form-control" id="msg-subject" placeholder="Sujet">
+			</div>
+			<div class="form-group col-xs-12 col-sm-6">
+				<label for="msg-recipient">Destinataire</label>
+				<input type="text" class="form-control" id="msg-recipient" placeholder="Destinataire">
+			</div>
+			<div class="form-group col-xs-12">
+				<label for="msg-body">Message</label>
+				<textarea class="form-control" id="msg-body" placeholder="Votre message"></textarea>
+			</div>
+			<div class="col-sm-12">
+				<button type="submit" class="btn btn-default">Submit</button>
+			</div>
+		</form>
+	</div> <!-- row -->
+	<div class="row">
+		<h3>Messages reçus</h3>
+		<div class="table-responsive">
+			<table class="table">
+				<th>
+					<td>Date</td>
+					<td>Auteur</td>
+					<td>Sujet</td>
+				</th>
+				<?php require('controllers/content/messenger/messenger_inbox.php') ?>
+			</table>
+		</div>
+	</div> <!-- row -->
+</div> <!-- container -->
