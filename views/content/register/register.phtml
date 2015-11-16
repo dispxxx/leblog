@@ -1,0 +1,59 @@
+<h2>Inscription</h2>
+<form action="?page=register&action=register" method="POST">
+    <fieldset>
+        <legend>Informations obligatoire</legend>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="email">Adresse email*</label>
+                <input type="email" class="form-control" name="register_email" id="register_email" placeholder="Email"
+                      value="<?php if(isset($email)){echo htmlentities($email); }?>" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="email">Confirmation adresse email*</label>
+                <input type="email" class="form-control" name="register_email_confirm" id="register_email_confirm"
+                       placeholder="Confirmation email" value="<?php if(isset($email)){echo htmlentities($email_confirm); }?>" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="password">Mot de passe*</label>
+                <input type="password" class="form-control" name="register_password" id="register_password"
+                       placeholder="Compris entre 8 et 30 caractères" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="password">Confirmation du mot de passe*</label>
+                <input type="password" class="form-control" id="register_password_confirm"
+                       name="register_password_confirm" placeholder="Compris entre 8 et 30 caractères" required>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Informations complémentaire</legend>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="name">Nom</label>
+                <input type="text" class="form-control" name="register_name" id="register_name"
+                       placeholder="Compris entre 2 et 30 caractères" value="<?php if(isset($name)){echo htmlentities($name); }?>">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="surname">Prénom</label>
+                <input type="text" class="form-control" name="register_surname" id="register_surname"
+                       placeholder="Compris entre 2 et 30 caractères" value="<?php if(isset($surname)){echo htmlentities($surname); }?>">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="username">Nom d'utilisateur</label>
+                <input type="text" class="form-control" name="register_username" id="register_username"
+                       placeholder="Compris entre 2 et 30 caractères" value="<?php if(isset($username)){echo htmlentities($username); }?>">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="g-recaptcha" data-sitekey="6LeiBBETAAAAAAi-dznkaB1iOqW6whmrOd5dw5ez"></div>
+            </div>
+
+        </div>
+    </fieldset>
+    <button type="submit" class="btn btn-default">Envoyer</button>
+</form>
