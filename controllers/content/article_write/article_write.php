@@ -1,4 +1,4 @@
-git <?php
+<?php
 
 
 if(count($errors)>0){
@@ -10,4 +10,3 @@ if(count($errors)>0){
     require('./views/content/article_write/success/success.phtml');
 }
 	require('./views/content/article_write/article_write.phtml');
-?>
