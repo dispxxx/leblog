@@ -4,12 +4,12 @@
 	/*
 	 * Field empty verify
 	 */
-	if (isset($_POST['msg_subject'])) {
+	if (isset($_POST['msg_subject']) && $_POST['msg_subject'] != "") {
 		$subject = $_POST['msg_subject'];
 	} else {
 		$errors[] = 'no_subject';
 	}
-	if (isset($_POST['msg_recipient'])) {
+	if (isset($_POST['msg_recipient'])  && $_POST['msg_recipient'] != "") {
 		/*
 		/*	Get recipient ID if it exists
 		*/
@@ -23,7 +23,7 @@
 	} else {
 		$errors[] = 'no_recipient';
 	}
-	if (isset($_POST['msg_content'])) {
+	if (isset($_POST['msg_content']) && $_POST['msg_content'] != "") {
 		$content = $_POST['msg_content'];
 	} else {
 		$errors[] = 'no_content';
@@ -33,16 +33,13 @@
 		$id_recipient = $recipient_array['id'];
 		$id_sender = $_SESSION['id'];
 		$id_prev = 0;
-		$date_published = date("Y-m-d h:i:s");
 		$subject = mysqli_real_escape_string($db, $subject);
 		$content = mysqli_real_escape_string($db, $content);
-		if ((mysqli_query($db, 'INSERT INTO private_msg(id_recipient, id_sender, date_published, id_prev, subject, content)
-                               		VALUES ('.$id_recipient.', '.$id_sender.', "'.$date_published.'", '.$id_prev.', "'.$subject.'", "'.$content.'")'))) {
-			header('Location: ?page=messenger&status=succcess');
+		if (mysqli_query($db, ' INSERT INTO private_msg(id_recipient, id_sender, id_prev, subject, content)
+                               	VALUES ('.$id_recipient.', '.$id_sender.', '.$id_prev.', "'.$subject.'", "'.$content.'")')) {
+			header('Location: ?page=messenger&succcess=true');
 			exit;
+		} else {
+			echo('ERROR FFS');
 		}
-
 	}
-
-	var_dump($errors);
-	var_dump($_POST['msg_content']);

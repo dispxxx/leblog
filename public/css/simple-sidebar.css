@@ -4,6 +4,10 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+ a:hover {
+    text-decoration: none;
+ }
+
 /* Toggle Styles */
 
 #wrapper {
@@ -109,6 +113,10 @@
     font-weight: bold;
 }
 
+.header a {
+    color: white;
+}
+
 .header {
     min-height: 115px;
     margin: -20px -35px 50px;
@@ -116,6 +124,7 @@
     background: #607D8B url('../img/bg.png') repeat;
     color: #fff;
 }
+
 .footer{
     min-height:50px;
     margin: 50px -35px 0;
@@ -148,4 +157,13 @@
 #wrapper.toggled #page-content-wrapper {
     position: relative;
     margin-right: 0;
+}
+
+/* Page profil */
+
+.user-p
+{
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 5px;
 }

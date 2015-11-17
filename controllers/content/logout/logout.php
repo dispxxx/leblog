@@ -1,3 +1,6 @@
 <?php
-require('./views/content/logout/logout.phtml');
-
+session_destroy();
+$_SESSION = array();
+header('Location: index.php');
+exit;
+?>

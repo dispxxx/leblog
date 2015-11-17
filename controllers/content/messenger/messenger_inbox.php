@@ -7,6 +7,6 @@
 				ORDER BY date_published DESC';
 	$result = mysqli_query($db, $query);
 	while ($msg = mysqli_fetch_assoc($result) ) {
-		$msg_date = date("Y.m.d - h:i",strtotime($msg['date_published']));
+		$msg_date = date("Y.m.d - H:i",strtotime($msg['date_published']));
 		require('views/content/messenger/messenger_inbox.phtml');
 	}

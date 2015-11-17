@@ -14,6 +14,10 @@ if (isset($_POST['login_email'], $_POST['login_password'])) {
      */
     $query = mysqli_query($db, 'SELECT id, email, username, password, status FROM user WHERE email = "'. mysqli_escape_string($db, $_POST['login_email']) .'"');
     $data = mysqli_fetch_assoc($query);
+    if(!$query){
+        $errors[] = 'db';
+    }
+
     /*
      * PDO
      */
