@@ -1,6 +1,5 @@
 <?php
 
-
 if(count($errors)>0){
     for($i = 0; $i < count($errors); $i++){
         require('./views/content/article_write/errors/'.$errors[$i].'.phtml');

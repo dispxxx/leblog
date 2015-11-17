@@ -7,7 +7,8 @@ if(isset($_POST['id'], $_POST['action'])){
         WHERE id = '".$_POST['id']."'");
 
         if($query){
-            echo "validate";
+            header('Location: ?page=article_validation&success=true&a=v');
+            exit;
         }
         else {
             $errors[]='db';
@@ -20,9 +21,8 @@ if(isset($_POST['id'], $_POST['action'])){
     WHERE id = '.$_POST['id'] );
 
         if($query){
-
-
-
+            header('Location: ?page=article_validation&success=true&a=d');
+            exit;
         }
         else {
             $errors[]= "db";
