@@ -1,1 +1,25 @@
-<h2>User list</h2>
+<div class="container">
+	<h2>User list</h2>
+	<div class="row">
+		<h3>Utilisateurs</h3>
+		<div class="table-responsive">
+			<table class="table">
+				<colgroup>
+					<!-- <col span="1" style="width: 25%;">
+					<col span="1" style="width: 55%;">
+					<col span="1" style="width: 20%;"> -->
+				</colgroup>
+				<thead>
+					<th>Pseudo</th>
+					<th>Email</th>
+					<th>Date d'inscription</th>
+					<th>Droits</th>
+					<th>Update</th>
+				</thead>
+				<tbody>
+					<?php require('controllers/content/user_list/user_list_user.php') ?>
+				</tbody>
+			</table>
+		</div>
+	</div> <!-- row -->
+</div> <!-- container -->
