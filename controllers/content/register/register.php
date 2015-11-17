@@ -2,7 +2,6 @@
 
 
 if( isset($_GET['success']) &&  $_GET['success'] == true){
-    echo 'success';
     require('./views/content/register/success/success.phtml');
 }else {
     if(count($errors)>0){
