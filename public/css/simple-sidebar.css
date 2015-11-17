@@ -158,3 +158,12 @@
     position: relative;
     margin-right: 0;
 }
+
+/* Page profil */
+
+.user-p
+{
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 5px;
+}

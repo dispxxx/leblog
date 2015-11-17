@@ -1,5 +1,5 @@
 <?php 
-$query = "SELECT user.surname AS user_surname, comments.content AS comments_content, comments.date_published AS comments_date 
+$query = "SELECT user.surname AS user_surname, comments.content AS comments_content, comments.date_published AS comments_date, comments.id_user 
 FROM comments
 LEFT JOIN article ON comments.id_article = article.id
 LEFT JOIN user ON comments.id_user = user.id
