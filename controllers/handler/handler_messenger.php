@@ -43,6 +43,3 @@
 		}
 
 	}
-
-	var_dump($errors);
-	var_dump($_POST['msg_content']);
