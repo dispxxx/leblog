@@ -1,5 +1,5 @@
 <?php
-$query = "SELECT article.id, user.username, title, date_published, content
+$query = "SELECT article.id, user.username, title, date_published, content, id_user
 FROM article
 LEFT JOIN user ON article.id_user = user.id
 ORDER BY date_published DESC LIMIT ". intval($nombreDeMessagesParPage) ." OFFSET ". intval($nombreOffset) ." ";
