@@ -1,0 +1,29 @@
+<hr>
+<h2><a href="?page=article&id=<?= $article['id'] ?>"><?= $article['title'] ?></a></h2>
+
+
+<hr>
+
+<!-- Preview Image -->
+<img class="img-responsive" src="http://placehold.it/900x300" alt="">
+
+<hr>
+
+<!-- Post Content -->
+
+<blockquote>
+    <p><?= $article['content'] ?></p>
+
+    <footer>
+        <div class="col-xs-6">
+            <span class="glyphicon glyphicon-time"></span> Ecrit
+            le <?= date("j M y", strtotime($article['date_published'])) ?>
+
+        </div>
+        <col-xs-6>
+
+            <span class="glyphicon glyphicon-edit"></span> Auteur: <a href="#"> <?= $article['username'] ?></a>
+        </col-xs-6>
+
+    </footer>
+</blockquote>
