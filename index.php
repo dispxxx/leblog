@@ -85,13 +85,13 @@ if (isset($_GET['page'])) {
     if (isset($_GET['action'])) {
         /* Soon restrict for visitor */
         if (in_array($_GET['action'], $handler_visitor)) {
-            require('./controllers/handler/handler_' . $_GET['action'] . '.php');
+            require('./controllers/handler/handler_'.$_GET['action'].'.php');
         } /* Soon restrict for member */
         elseif (in_array($_GET['action'], $handler_member)) {
-            require('./controllers/handler/handler_' . $_GET['action'] . '.php');
+            require('./controllers/handler/handler_'.$_GET['action'].'.php');
         } /* Soon restrict for admin */
         elseif (in_array($_GET['action'], $handler_admin)) {
-            require('./controllers/handler/handler_' . $_GET['action'] . '.php');
+            require('./controllers/handler/handler_'.$_GET['action'].'.php');
         }
     }
 
