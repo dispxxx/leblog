@@ -1,0 +1,52 @@
+<tr>
+    <td><?php echo $data['title'];?></td>
+    <td><?php echo $data['content'];?></td>
+    <td><?php echo $data['username'];?></td>
+    <td><?php echo $data['date_published'];?></td>
+    <td>
+        <button class="btn btn-success" data-toggle="modal" data-target="#myModal<?php echo $data['article_id'];?>_v"  title="valider"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+        <button class="btn btn-danger" data-toggle="modal" data-target="#myModal<?php echo $data['article_id'];?>_d"  title="supprimer"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+    </td>
+</tr>
+<div class="modal fade" id="myModal<?php echo $data['article_id'];?>_v" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Valider l'article</h4>
+            </div>
+            <div class="modal-body">
+                Confirmer la publication l'article: <?php echo $data['title'];?> écrit par l'auteur <?php echo $data['username'];?> ?
+            </div>
+            <div class="modal-footer">
+                <form action="?page=article_validation&action=article_validation" method="post">
+                    <input type="hidden" name="id" value="<?php echo $data['article_id'];?>">
+                    <input type="hidden" name="action" value="validate" >
+                    <button type="submit" class="btn btn-success">Confirmer</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal<?php echo $data['article_id'];?>_d" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Supprimer l'article</h4>
+            </div>
+            <div class="modal-body">
+                Confirmer la suppression de l'article: <?php echo $data['title'];?> écrit par l'auteur <?php echo $data['username'];?> ?
+            </div>
+            <div class="modal-footer">
+                <form action="?page=article_validation&action=article_validation" method="post">
+                    <input type="hidden" name="id" value="<?php echo $data['article_id'];?>">
+                    <input type="hidden" name="action" value="delete" >
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                    <button type="submit" class="btn btn-danger">Confirmer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
