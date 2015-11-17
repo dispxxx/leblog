@@ -175,9 +175,12 @@ if(isset($_POST['register_email'], $_POST['register_email_confirm'], $_POST['reg
 
         $query = mysqli_query($db, 'INSERT INTO user(name, surname, email, password, username, status)
                                     VALUES ("'.$name.'", "'.$surname.'", "'.$email.'", "'.$password.'", "'.$username.'", '.STATUS_MEMBER.')');
-
-        header('Location: ?page=register&success=true');
-        exit;
+        if($query){
+            header('Location: ?page=register&success=true');
+            exit;
+        }else {
+            $errors[] = "db";
+        }
     }
 
 
