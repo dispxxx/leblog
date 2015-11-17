@@ -1,0 +1,38 @@
+	<tr>
+		<td><?php echo $msg_date ?></td>
+		<td>
+			<a href="" data-toggle="modal" data-target="#msg-<?php echo $msg['id'] ?>">
+				<?php echo $msg['subject'] ?>
+			</a>
+		</td>
+		<td><?php echo $msg['username'];?></td>
+	</tr>
+</a>
+<div class="modal fade" id="msg-<?php echo $msg['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel"><?php echo $msg['subject'] ?></h4>
+			</div> <!-- modal-header -->
+			<div class="modal-body">
+				<div class="modal-message">
+					<p><?php echo $msg['content'] ?></p>
+					<p><em>Par <?php echo $msg['username'] ?> - <?php echo $msg_date ?></em></p>
+				</div>
+				<form action="?page=messenger&action=messenger_answer" method="post">
+					<div>
+						<textarea class="form-control" name="msg_content" placeholder="Répondre"></textarea>
+					</div>
+					<input type="hidden" name="id_prev" value="<?php echo $msg['id'] ?>">
+					<div>
+						<button type="submit" class="btn btn-default">Envoyer</button>
+					</div>
+				</form>
+			</div> <!-- modal-body -->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div> <!-- modal-footer -->
+		</div> <!-- modal-content -->
+	</div> <!-- modal-dialog -->
+</div> <!-- modal -->
