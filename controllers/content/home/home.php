@@ -9,7 +9,6 @@ if (isset($_GET['o'])) {
     $nombreOffset = intval($_GET['o']);
 }
 
-
 // On récupère le nombre total de messages
 $retour = mysqli_query($db, 'SELECT COUNT(*) AS nb_messages FROM article');
 $donnees = mysqli_fetch_array($retour);
@@ -20,6 +19,4 @@ $nombreDePages = ceil($totalDesMessages / $nombreDeMessagesParPage);
 $count = 0;
 
 require('./views/content/home/home.phtml');
-
-
 require('./views/content/home/home_pagination/home_pagination.phtml');

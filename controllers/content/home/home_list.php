@@ -5,9 +5,6 @@ LEFT JOIN user ON article.id_user = user.id
 ORDER BY date_published DESC LIMIT ". intval($nombreDeMessagesParPage) ." OFFSET ". intval($nombreOffset) ." ";
 $resultat = mysqli_query($db, $query);
 
-
-
-
 if ($resultat) {
     while ($article = mysqli_fetch_assoc($resultat))
     {
