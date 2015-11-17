@@ -96,6 +96,28 @@ if(isset($_POST['register_email'], $_POST['register_email_confirm'], $_POST['reg
 
 
     /*
+     * Username is not present
+     */
+    $query = mysqli_query($db, 'SELECT COUNT(username) FROM user WHERE username = "'. mysqli_escape_string($db, $_POST['register_username']) .'"');
+    $data = mysqli_fetch_assoc($query);
+    if($data['COUNT(username)'] != 0){
+        $errors[] = "username_exist";
+    }
+    /*
+     * Username format verify
+     */
+    if((strlen($_POST['register_username']) >=2 && strlen($_POST['register_username'])<=30)){
+
+        if((preg_match("#[a-zA-Z0-9]+[ -_']*$#", $_POST['register_username']))){
+            $username = $_POST['register_username'];
+        }else {
+            $errors[] = "username_format";
+        }
+    }else {
+        $errors[] = "username_lenght";
+    }
+
+    /*
      * Name format verify
      */
     if((strlen($_POST['register_name']) >=2 && strlen($_POST['register_name'])<=30) || $_POST['register_name'] === ""){
@@ -124,19 +146,6 @@ if(isset($_POST['register_email'], $_POST['register_email_confirm'], $_POST['reg
     }
 
 
-    /*
-     * Username format verify
-     */
-    if((strlen($_POST['register_username']) >=2 && strlen($_POST['register_username'])<=30) || $_POST['register_username'] === ""){
-
-        if((preg_match("#[a-zA-Z0-9]+[ -_']*$#", $_POST['register_username']))  || $_POST['register_surname'] === ""){
-            $username = $_POST['register_username'];
-        }else {
-            $errors[] = "username_format";
-        }
-    }else {
-        $errors[] = "username_lenght";
-    }
 
 
 
