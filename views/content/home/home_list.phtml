@@ -1,5 +1,5 @@
 <hr>
-<h2><a href="?page=article&id=<?= $article['id'] ?>"><?= htmlentities($article['title']); ?></a></h2>
+<h2><a href="?page=article&amp;id=<?= $article['id'] ?>"><?= htmlentities($article['title']); ?></a></h2>
 
 
 <hr>
@@ -17,7 +17,7 @@
     <footer>
         <div class="col-xs-6">
             <span class="glyphicon glyphicon-time"></span> Ecrit
-            le <?= date("j M y", strtotime($article['date_published'])) ?>
+            le <?= date("jS M Y", strtotime($article['date_published'])) ?>
 
         </div>
         <col-xs-6>

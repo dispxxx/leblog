@@ -1,6 +1,5 @@
 <!-- Blog Post Content Column -->
 
-
     <!-- Blog Post -->
 
     <!-- Title -->
@@ -14,7 +13,7 @@
     <hr>
 
     <!-- Date/Time -->
-    <p><span class="glyphicon glyphicon-time"></span> Posted on <?= date("j M y", strtotime($article['date_published']))?></p>
+    <p><span class="glyphicon glyphicon-time"></span> Posted on <?= date("jS M Y", strtotime($article['date_published']))?></p>
 
     <hr>
 
@@ -31,48 +30,13 @@
     <!-- Blog Comments -->
 
     <!-- Comments Form -->
-    <div class="well">
-        <h4>Leave a Comment:</h4>
 
-        <form role="form">
-            <div class="form-group">
-                <textarea class="form-control" rows="3"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
+    <?php 
+    require('./controllers/content/article/article_comment_form/article_comment_form.php');
+     ?>    
 
-    <hr>
+     <!-- Posted Comments -->
 
-    <!-- Posted Comments -->
-
-    <!-- Comment -->
-    <div class="media">
-        <a class="pull-left" href="#">
-            <img class="media-object" src="" alt="">
-        </a>
-
-        <div class="media-body">
-            <h4 class="media-heading"><!-- Titre article -->
-                <small><!-- Date commentaire --></small>
-            </h4>
-            <!-- Texte commentaire -->
-        </div>
-    </div>
-
-    <!-- Nested Comment -->
-            <div class="media">
-                <a class="pull-left" href="#">
-                    <img class="media-object" src="" alt="">
-                </a>
-
-                <div class="media-body">
-                    <h4 class="media-heading"><!-- Nested titre article -->
-                        <small><!-- Date commentaire --></small>
-                    </h4>
-                    <!-- Texte commentaire -->
-                </div>
-            </div>
-            <!-- End Nested Comment -->
-        </div>
-    </div>
+     <?php 
+    require('./controllers/content/article/article_comment_list/article_comment_list.php');
+     ?>
