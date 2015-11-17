@@ -33,12 +33,11 @@
 	if (count($errors) == 0) {
 		$id_recipient = $message['id_sender'];
 		$id_sender = $_SESSION['id'];
-		$date_published = date("Y-m-d h:i:s");
 		$id_prev = $id_prev;
 		$subject = 'Re: ' . $message['subject'];
 		$content = mysqli_real_escape_string($db, $content);
-		if ((mysqli_query($db, 'INSERT INTO private_msg(id_recipient, id_sender, date_published, id_prev, subject, content)
-                               		VALUES ('.$id_recipient.', '.$id_sender.', "'.$date_published.'", '.$id_prev.', "'.$subject.'", "'.$content.'")'))) {
+		if ((mysqli_query($db, 'INSERT INTO private_msg(id_recipient, id_sender, id_prev, subject, content)
+                               		VALUES ('.$id_recipient.', '.$id_sender.', '.$id_prev.', "'.$subject.'", "'.$content.'")'))) {
 			header('Location: ?page=messenger&succcess=true');
 			exit;
 		} else {
