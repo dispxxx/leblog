@@ -2,10 +2,10 @@
 		<td><?php echo $msg_date ?></td>
 		<td>
 			<a href="" data-toggle="modal" data-target="#msg-<?php echo $msg['id'] ?>">
-				<?php echo $msg['subject'] ?>
+				<?php echo htmlentities($msg['subject']) ?>
 			</a>
 		</td>
-		<td><?php echo $msg['username'];?></td>
+		<td><?php echo htmlentities($msg['username']);?></td>
 	</tr>
 </a>
 <div class="modal fade" id="msg-<?php echo $msg['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -13,12 +13,12 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel"><?php echo $msg['subject'] ?></h4>
+				<h4 class="modal-title" id="myModalLabel"><?php echo htmlentities($msg['subject']) ?></h4>
 			</div> <!-- modal-header -->
 			<div class="modal-body">
 				<div class="modal-message">
-					<p><?php echo $msg['content'] ?></p>
-					<p><em>Par <?php echo $msg['username'] ?> - <?php echo $msg_date ?></em></p>
+					<p><?php echo htmlentities($msg['content']) ?></p>
+					<p><em>Par <?php echo htmlentities($msg['username']) ?> - <?php echo $msg_date ?></em></p>
 				</div>
 				<form action="?page=messenger&action=messenger_answer" method="post">
 					<div>
