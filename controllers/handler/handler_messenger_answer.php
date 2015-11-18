@@ -1,3 +1,4 @@
+
 <?php
 	/*
 	 * Content empty verify
@@ -34,7 +35,7 @@
 		$id_recipient = $message['id_sender'];
 		$id_sender = $_SESSION['id'];
 		$id_prev = $id_prev;
-		$subject = 'Re: ' . mysqli_real_escape_string($db, $message['subject']);  /// <!---- Not mysli_real_escape_string ???
+		$subject = 'Re: ' . $message['subject'];  /// <!---- Not mysli_real_escape_string ???
 		$content = mysqli_real_escape_string($db, $content);
 		if ((mysqli_query($db, 'INSERT INTO private_msg(id_recipient, id_sender, id_prev, subject, content)
                                		VALUES ('.$id_recipient.', '.$id_sender.', '.$id_prev.', "'.$subject.'", "'.$content.'")'))) {

@@ -1,3 +1,4 @@
+
 <?php
 if( isset($_GET['success']) &&  $_GET['success'] == true){
 	require('./views/content/messenger/success/success.phtml');
@@ -8,5 +9,4 @@ if( isset($_GET['success']) &&  $_GET['success'] == true){
 		}
 	}
 }
-
 require('./views/content/messenger/messenger.phtml');
