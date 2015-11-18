@@ -33,5 +33,5 @@ else
 {
 	require('./controllers/content/404/404.php');
 }
-?>
+
 
