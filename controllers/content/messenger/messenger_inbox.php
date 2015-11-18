@@ -1,5 +1,4 @@
-<?php 
-	$_SESSION['id'] = 1;
+<?php
 	$query =  '	SELECT private_msg.id, id_sender, date_published, subject, content, user.username
 				FROM private_msg
 				LEFT JOIN user ON private_msg.id_sender = user.id
