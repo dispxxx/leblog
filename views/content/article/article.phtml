@@ -26,31 +26,3 @@
     <p class="lead"><?=htmlentities($article['content'])?></p>
 
     <hr>
-
-    <!-- Blog Comments -->
-
-    <!-- Comments Form -->
-
-    <?php 
-    require('./controllers/content/article/article_comment_form/article_comment_form.php');
-     ?>    
-
-     <!-- Posted Comments -->
-
-     <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Voir
-            <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="?page=article&amp;id=<?= $article['id'] ?>&amp;c=1&amp;e=0">1 commentaire par page</a></li>
-            <li><a href="?page=article&amp;id=<?= $article['id'] ?>&amp;c=5&amp;e=0">5 commentaires par page</a></li>
-            <li><a href="?page=article&amp;id=<?= $article['id'] ?>&amp;c=10&amp;e=0">10 commentaires par page</a></li>
-        </ul>
-    </div>
-
-     <?php 
-    require('./controllers/content/article/article_comment_list/article_comment_list.php');
-    require('./controllers/content/article/article_comment_list/article_comment_pagination/article_comment_pagination.php');
-     ?>
-
