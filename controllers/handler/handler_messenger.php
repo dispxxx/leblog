@@ -1,6 +1,4 @@
 <?php
-	echo "handler messenger";
-
 	/*
 	 * Field empty verify
 	 */
