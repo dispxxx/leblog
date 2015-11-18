@@ -58,11 +58,8 @@ $access_admin = array('dashboard', 'article_validation', 'user_list');
  *  Set handlers
  */
 $handler_visitor = array('login', 'register');
-$handler_member = array('messenger', 'messenger_answer', 'profile', 'article_write', 'comment_write', 'vote_stars', 'logout');
+$handler_member = array('messenger', 'messenger_answer', 'profile', 'article_write', 'comment_write', 'vote_stars', 'user_messenger', 'logout');
 $handler_admin = array('article_validation', 'article_edit', 'article_delete', 'comment_delete', 'user_update_status', 'messenger_user', 'vote_stars_edit');
-
-
-
 
 
 if (isset($_GET['page'])) {
@@ -72,10 +69,10 @@ if (isset($_GET['page'])) {
     elseif (in_array($_GET['page'], $access_visitor) && !isset($_SESSION['id'])) {
         $page = $_GET['page'];
     } /* Soon restrict for member*/
-    elseif (in_array($_GET['page'], $access_member)) {
+    elseif (in_array($_GET['page'], $access_member) && isset($_SESSION['id'])) {
         $page = $_GET['page'];
     } /* Soon restrict for admin */
-    elseif (in_array($_GET['page'], $access_admin)) {
+    elseif (in_array($_GET['page'], $access_admin) && isset($_SESSION['id']) && $_SESSION['status'] == STATUS_ADMIN) {
         $page = $_GET['page'];
     } else {
         $page = "404";
@@ -84,14 +81,14 @@ if (isset($_GET['page'])) {
 
     if (isset($_GET['action'])) {
         /* Soon restrict for visitor */
-        if (in_array($_GET['action'], $handler_visitor)) {
-            require('./controllers/handler/handler_'.$_GET['action'].'.php');
+        if (in_array($_GET['action'], $handler_visitor) && !isset($_SESSION['id'])) {
+            require('./controllers/handler/handler_' . $_GET['action'] . '.php');
         } /* Soon restrict for member */
-        elseif (in_array($_GET['action'], $handler_member)) {
-            require('./controllers/handler/handler_'.$_GET['action'].'.php');
+        elseif (in_array($_GET['action'], $handler_member) && isset($_SESSION['id'])) {
+            require('./controllers/handler/handler_' . $_GET['action'] . '.php');
         } /* Soon restrict for admin */
-        elseif (in_array($_GET['action'], $handler_admin)) {
-            require('./controllers/handler/handler_'.$_GET['action'].'.php');
+        elseif (in_array($_GET['action'], $handler_admin) && isset($_SESSION['id']) && $_SESSION['status'] == STATUS_ADMIN) {
+            require('./controllers/handler/handler_' . $_GET['action'] . '.php');
         }
     }
 
