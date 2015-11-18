@@ -1,5 +1,5 @@
 <?php 
-$query = mysqli_query($db, 'SELECT username, email, date_register, `status`
+$query = mysqli_query($db, 'SELECT id, username, email, date_register, `status`
 							FROM user
 							ORDER BY id ASC');
 
