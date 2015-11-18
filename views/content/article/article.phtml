@@ -13,7 +13,7 @@
     <hr>
 
     <!-- Date/Time -->
-    <p><span class="glyphicon glyphicon-time"></span> Posted on <?= date("jS M Y", strtotime($article['date_published']))?></p>
+    <p><span class="glyphicon glyphicon-time"></span> Publié le <?= date("jS M Y", strtotime($article['date_published']))?></p>
 
     <hr>
 
@@ -26,17 +26,3 @@
     <p class="lead"><?=htmlentities($article['content'])?></p>
 
     <hr>
-
-    <!-- Blog Comments -->
-
-    <!-- Comments Form -->
-
-    <?php 
-    require('./controllers/content/article/article_comment_form/article_comment_form.php');
-     ?>    
-
-     <!-- Posted Comments -->
-
-     <?php 
-    require('./controllers/content/article/article_comment_list/article_comment_list.php');
-     ?>

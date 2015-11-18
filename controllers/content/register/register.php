@@ -1,7 +1,7 @@
 <?php
 
 
-if( isset($_GET['success']) &&  $_GET['success'] == true){
+if( isset($_GET['success']) &&  $_GET['success'] == true && count($errors) == 0){
     require('./views/content/register/success/success.phtml');
 }else {
     if(count($errors)>0){

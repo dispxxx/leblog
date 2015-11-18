@@ -1,2 +1,5 @@
 <?php
-require('./views/menu/menu_member.phtml');
+if(isset($_SESSION['id'])){
+    require('./views/menu/menu_member.phtml');
+
+}
