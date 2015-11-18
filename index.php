@@ -58,7 +58,7 @@ $access_admin = array('dashboard', 'article_validation', 'user_list');
  *  Set handlers
  */
 $handler_visitor = array('login', 'register');
-$handler_member = array('messenger', 'profile', 'article_write', 'comment_write', 'vote_stars', 'logout');
+$handler_member = array('messenger', 'messenger_answer', 'profile', 'article_write', 'comment_write', 'vote_stars', 'logout');
 $handler_admin = array('article_validation', 'article_edit', 'article_delete', 'comment_delete', 'user_update_status', 'messenger_user', 'vote_stars_edit');
 
 
@@ -85,13 +85,13 @@ if (isset($_GET['page'])) {
     if (isset($_GET['action'])) {
         /* Soon restrict for visitor */
         if (in_array($_GET['action'], $handler_visitor)) {
-            require('./controllers/handler/handler_' . $_GET['action'] . '.php');
+            require('./controllers/handler/handler_'.$_GET['action'].'.php');
         } /* Soon restrict for member */
         elseif (in_array($_GET['action'], $handler_member)) {
-            require('./controllers/handler/handler_' . $_GET['action'] . '.php');
+            require('./controllers/handler/handler_'.$_GET['action'].'.php');
         } /* Soon restrict for admin */
         elseif (in_array($_GET['action'], $handler_admin)) {
-            require('./controllers/handler/handler_' . $_GET['action'] . '.php');
+            require('./controllers/handler/handler_'.$_GET['action'].'.php');
         }
     }
 

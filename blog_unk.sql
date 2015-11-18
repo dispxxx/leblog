@@ -77,6 +77,7 @@ CREATE TABLE IF NOT EXISTS `private_msg` (
   `id_sender` int(11) NOT NULL,
   `date_published` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `id_prev` int(11) NOT NULL,
+  `subject` varchar( 63 ) COLLATE utf8_bin NOT NULL,
   `content` varchar(510) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
