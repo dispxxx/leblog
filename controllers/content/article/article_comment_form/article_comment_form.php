@@ -7,4 +7,3 @@ else
 {
 	echo 'Veuillez vous <a href="?page=login">connecter</a> pour poster un commentaire';
 }
-?>

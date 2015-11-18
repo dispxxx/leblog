@@ -69,7 +69,7 @@ if (isset($_GET['page'])) {
     if (in_array($_GET['page'], $access)) {
         $page = $_GET['page'];
     } /* Soon restrict for visitor*/
-    elseif (in_array($_GET['page'], $access_visitor)) {
+    elseif (in_array($_GET['page'], $access_visitor) && !isset($_SESSION['id'])) {
         $page = $_GET['page'];
     } /* Soon restrict for member*/
     elseif (in_array($_GET['page'], $access_member)) {
