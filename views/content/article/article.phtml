@@ -13,8 +13,12 @@
     <hr>
 
     <!-- Date/Time -->
-    <p><span class="glyphicon glyphicon-time"></span> Publié le <?= date("jS M Y", strtotime($article['date_published']))?></p>
-
+    <div class="row">
+        <p class="col-xs-6"><span class="glyphicon glyphicon-time"></span> Publié le <?= date("jS M Y", strtotime($article['date_published']))?></p>
+        <?php if ($article['note'] > 0) { ?>
+            <p class="article-stars col-xs-6 text-right"> Note utilisateurs : <strong><?php echo $article['note'] ?>/5</strong></p>
+        <?php } ?>
+    </div>
     <hr>
 
     <!-- Preview Image -->

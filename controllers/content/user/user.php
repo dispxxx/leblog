@@ -4,6 +4,7 @@ if(isset($_GET['id'])){
     $resultat = mysqli_query($db, $query);
     if ($resultat) {
         $user = mysqli_fetch_assoc($resultat);
+        $query =
         $query = "SELECT COUNT(note) AS article_note FROM article WHERE id_user = '" . intval($_GET['id']) . "' AND date_validation <> 0000-00-00 ";
         $resultat = mysqli_query($db, $query);
         if($resultat) {
@@ -11,7 +12,6 @@ if(isset($_GET['id'])){
             if($nb_article_v['article_note'] > 0 ){
                 $query = "SELECT note FROM article WHERE id_user = '" . intval($_GET['id']) . "' AND date_validation <> 0000-00-00 ";
                 $resultat = mysqli_query($db, $query);
-
                 $notes = 0;
                 while($note = mysqli_fetch_assoc($resultat)){
                     $notes += $note['note'];

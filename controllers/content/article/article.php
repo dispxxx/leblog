@@ -1,6 +1,6 @@
 <?php
 if (isset($_GET['id'])) {
-    $query = "SELECT article.id, user.username, article.title, article.date_published, article.content, article.id_user
+$query = "SELECT article.id, user.username, title, date_published, content, id_user, note
 FROM article
 LEFT JOIN user ON article.id_user = user.id
 WHERE article.id = '" . intval($_GET['id']) . "'";
@@ -8,15 +8,16 @@ WHERE article.id = '" . intval($_GET['id']) . "'";
     $article = mysqli_fetch_assoc($resultat);
 
 
-    if ($article != NULL) {
-        require('./views/content/article/article.phtml');
+if ($article != NULL) {
+	require('./views/content/article/article.phtml');
 
 
-        if (isset($_SESSION['id'])) {
-            require('./views/content/article/article_comment_form/article_comment_form.phtml');
-        } else {
-            require('./views/content/article/article_comment_form/article_comment_form_logout.phtml');
-        }
+	if (isset($_SESSION['id'])) {
+		require('./views/content/article/article_rate/article_rate.phtml');
+		require('./views/content/article/article_comment_form/article_comment_form.phtml');
+	} else {
+		require('./views/content/article/article_comment_form/article_comment_form_logout.phtml');
+	}
 
         $query = "SELECT COUNT(*)
     FROM comments
@@ -36,5 +37,5 @@ WHERE article.id = '" . intval($_GET['id']) . "'";
     }
 
 } else {
-    require('./controllers/content/404/404.php');
+	require('./controllers/content/404/404.php');
 }
