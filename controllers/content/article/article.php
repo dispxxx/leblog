@@ -33,7 +33,6 @@ if (isset($_GET['id'])) {
     		require('./views/content/article/article_comment_form/article_comment_form_logout.phtml');
     	}
 
-
         $query = "  SELECT COUNT(*)
                     FROM comments
                     LEFT JOIN article ON comments.id_article = article.id
@@ -51,6 +50,7 @@ if (isset($_GET['id'])) {
         }
     } else {
         require('./controllers/content/404/404.php');
+
     }
 } else {
 	require('./controllers/content/404/404.php');

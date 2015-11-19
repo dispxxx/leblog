@@ -218,4 +218,7 @@
 .star:hover ~ .star, .star-input:focus ~ .star, .star-container:hover ~ .star, .star:hover, .actif{
     color: #FFC107;
 }
-
+.delete-com {
+    position: relative;
+    top: 40px;
+}

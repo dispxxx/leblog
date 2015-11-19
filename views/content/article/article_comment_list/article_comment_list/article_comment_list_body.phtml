@@ -1,0 +1,27 @@
+<!-- Comment -->
+<hr>
+    <div class="media">
+        <a class="pull-left" href="#">
+
+        </a>
+        <blockquote>
+
+            <footer>
+
+                <div class="col-xs-6">
+                    <span class="glyphicon glyphicon-time"></span> Ecrit le <?=date("jS M Y G:i", strtotime($comment['comments_date']))?>
+                </div>
+
+                <col-xs-6>
+                    <span class="glyphicon glyphicon-edit"></span> Auteur: <a href="?page=user&amp;id=<?= $comment['id_user'] ?>"> <?= htmlentities($comment['user_username']) ?></a>
+                </col-xs-6>
+
+            </footer>
+
+        </blockquote>
+        <div class="media-body">
+            <p><?=htmlentities($comment['comments_content'])?></p>
+
+        </div>
+    </div>
+
