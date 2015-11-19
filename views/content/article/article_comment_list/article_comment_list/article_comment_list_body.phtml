@@ -1,4 +1,5 @@
 <!-- Comment -->
+    <hr>
     <div class="media">
         <a class="pull-left" href="#">
             <img class="media-object" src="" alt="">
@@ -11,18 +12,18 @@
                 <footer>
 
                     <div class="col-xs-6">
-                       <span class="glyphicon glyphicon-time"></span> Ecrit le <?=date("jS M Y G:i", strtotime($article['comments_date']))?>
+                       <span class="glyphicon glyphicon-time"></span> Ecrit le <?=date("jS M Y G:i", strtotime($comment['comments_date']))?>
                     </div>
 
                     <col-xs-6>
-                       <span class="glyphicon glyphicon-edit"></span> Auteur: <a href="?page=user&amp;id=<?= $article['id_user'] ?>"> <?= htmlentities($article['user_surname']) ?></a>
+                       <span class="glyphicon glyphicon-edit"></span> Auteur: <a href="?page=user&amp;id=<?= $article['id_user'] ?>"> <?= htmlentities($comment['user_username']) ?></a>
                     </col-xs-6>
 
                 </footer>
 
             </blockquote>
 
-            <p><?=htmlentities($article['comments_content'])?></p>
+            <p><?=htmlentities($comment['comments_content'])?></p>
         
         </div>
     </div>
