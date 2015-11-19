@@ -25,10 +25,10 @@ if ($article != NULL) {
     $commentaires = mysqli_fetch_assoc($resultatCom);
     if ($commentaires['COUNT(*)'] > 0) {
         require('./views/content/article/article_comment_list/article_comment_list_button.phtml');
-        require('./controllers/content/article/article_comment_list/article_comment_list.php');
+        require('./controllers/content/article/article_comment_list/article_comment_list/article_comment_list.php');
         require('./views/content/article/article_comment_list/article_comment_pagination/article_comment_pagination.phtml');
     }else{
-        echo "aucun";
+        echo "aucun commentaire";
     }
 } else {
     require('./controllers/content/404/404.php');
