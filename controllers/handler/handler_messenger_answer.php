@@ -1,3 +1,4 @@
+
 <?php
 	/*
 	 * Content empty verify
