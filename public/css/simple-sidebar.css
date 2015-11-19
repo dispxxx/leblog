@@ -185,15 +185,20 @@
 
 /* Page liste membres */
 
-.users_view_row
+.table-striped
 {
-    border-top: solid 1px #C5C2C2;
-    border-bottom: solid 1px #C5C2C2;
-    padding-top: 10px;
-    padding-bottom: 10px;    
+    text-align: center;
 }
 
-.users_view_col
-{
-    border-left: 5px solid #EEE;
-}
+.headerSortDown
+{ 
+    background-image: url(../img/small.gif); 
+    background-color: #607D8B;
+    color: white;
+    cursor: pointer; 
+    font-weight: bold; 
+    background-repeat: no-repeat; 
+    background-position: center right; 
+    padding-left: 20px;     
+    margin-left: -1px; 
+} 

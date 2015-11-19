@@ -76,6 +76,7 @@
 
 <!-- jQuery -->
 <script src="public/js/jquery.js"></script>
+<script src="public/js/jquery.tablesorter.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="public/js/bootstrap.min.js"></script>
@@ -93,6 +94,16 @@
     $('#myModal').on('shown.bs.modal', function () {
       $('#myInput').focus()
     })
+</script>
+
+<!-- List user Toogle -->
+<script>
+    $(document).ready(function() 
+    { 
+        $("#myTable").tablesorter(); 
+    } 
+); 
+   
 </script>
 
 <!-- Google captcha -->
