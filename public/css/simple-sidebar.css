@@ -178,15 +178,8 @@
 
 /* Page profil */
 
-.user-p
-{
-    font-weight: bold;
-    display: inline-block;
-    margin-right: 5px;
-}
-.star-container {
-
-
+#source{
+    padding: 0px;
 }
 
 .star{
