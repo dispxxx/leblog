@@ -178,13 +178,10 @@
 
 /* Page profil */
 
-.user-p
+#source
 {
-    font-weight: bold;
-    display: inline-block;
-    margin-right: 5px;
+    padding: 0px;
 }
-
 
 /* Page liste membres */
 
