@@ -62,20 +62,17 @@ $handler_member = array('messenger', 'messenger_answer', 'profile', 'article_wri
 $handler_admin = array('article_validation', 'article_edit', 'article_delete', 'comment_delete', 'user_update_status', 'messenger_user');
 
 
-
-
-
 if (isset($_GET['page'])) {
     if (in_array($_GET['page'], $access)) {
         $page = $_GET['page'];
     } /* Soon restrict for visitor*/
-    elseif (in_array($_GET['page'], $access_visitor)) {
+    elseif (in_array($_GET['page'], $access_visitor) && !isset($_SESSION['id'])) {
         $page = $_GET['page'];
     } /* Soon restrict for member*/
-    elseif (in_array($_GET['page'], $access_member)) {
+    elseif (in_array($_GET['page'], $access_member) && isset($_SESSION['id'])) {
         $page = $_GET['page'];
     } /* Soon restrict for admin */
-    elseif (in_array($_GET['page'], $access_admin)) {
+    elseif (in_array($_GET['page'], $access_admin) && isset($_SESSION['id']) && $_SESSION['status'] == STATUS_ADMIN) {
         $page = $_GET['page'];
     } else {
         $page = "404";
@@ -84,14 +81,14 @@ if (isset($_GET['page'])) {
 
     if (isset($_GET['action'])) {
         /* Soon restrict for visitor */
-        if (in_array($_GET['action'], $handler_visitor)) {
-            require('./controllers/handler/handler_'.$_GET['action'].'.php');
+        if (in_array($_GET['action'], $handler_visitor) && !isset($_SESSION['id'])) {
+            require('./controllers/handler/handler_' . $_GET['action'] . '.php');
         } /* Soon restrict for member */
-        elseif (in_array($_GET['action'], $handler_member)) {
-            require('./controllers/handler/handler_'.$_GET['action'].'.php');
+        elseif (in_array($_GET['action'], $handler_member) && isset($_SESSION['id'])) {
+            require('./controllers/handler/handler_' . $_GET['action'] . '.php');
         } /* Soon restrict for admin */
-        elseif (in_array($_GET['action'], $handler_admin)) {
-            require('./controllers/handler/handler_'.$_GET['action'].'.php');
+        elseif (in_array($_GET['action'], $handler_admin) && isset($_SESSION['id']) && $_SESSION['status'] == STATUS_ADMIN) {
+            require('./controllers/handler/handler_' . $_GET['action'] . '.php');
         }
     }
 

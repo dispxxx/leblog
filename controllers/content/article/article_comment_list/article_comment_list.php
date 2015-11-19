@@ -1,5 +1,5 @@
-<?php 
-$nombreDeCommentairesParPage = 1;
+<?php
+$nombreDeCommentairesParPage = 5;
 $nombreOffComSet = 0;
 if (isset($_GET['c'])) {
     $nombreDeCommentairesParPage = intval($_GET['c']);
@@ -16,7 +16,7 @@ $totalDesCommentaires = $donnees['nb_commentaires'];
 $nombreDePages = ceil($totalDesCommentaires / $nombreDeCommentairesParPage);
 // Puis on fait une boucle pour écrire les liens vers chacune des pages
 $count = 0;
-$query = "SELECT user.surname AS user_surname, comments.content AS comments_content, comments.date_published AS comments_date, comments.id_user 
+$query = "SELECT user.username AS user_username , comments.content AS comments_content, comments.date_published AS comments_date, comments.id_user
 FROM comments
 LEFT JOIN article ON comments.id_article = article.id
 LEFT JOIN user ON comments.id_user = user.id
@@ -29,3 +29,4 @@ while ($article = mysqli_fetch_assoc($resultat))
 {
 	require('./views/content/article/article_comment_list/article_comment_list.phtml');
 }
+
