@@ -192,13 +192,17 @@
 
 .headerSortDown
 { 
-    background-image: url(../img/small.gif); 
     background-color: #607D8B;
-    color: white;
-    cursor: pointer; 
+    color: white;     
     font-weight: bold; 
     background-repeat: no-repeat; 
     background-position: center right; 
     padding-left: 20px;     
     margin-left: -1px; 
 } 
+
+i 
+{
+    margin-left: 5px;
+    cursor: pointer;
+}
