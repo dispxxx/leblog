@@ -1,6 +1,6 @@
 <?php
 if (isset($_GET['id'])) {
-    $query = "  SELECT article.id, user.username, title, date_published, content, id_user, note
+    $query = "  SELECT article.id, user.username, title, date_published, content, id_user, note, thumbnail
                 FROM article
                 LEFT JOIN user ON article.id_user = user.id
                 WHERE article.id = '" . intval($_GET['id']) . "'";
@@ -27,7 +27,6 @@ if (isset($_GET['id'])) {
                     WHERE id_user = "'.$_SESSION['id'].'" AND id_article = "'.intval($_GET['id']).'"
         ');
         $resultatCountRate = mysqli_fetch_assoc($query);
-        echo $resultatCountRate["COUNT(*)"];
 
         $query = "  SELECT COUNT(*)
                     FROM comments
