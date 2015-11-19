@@ -9,19 +9,24 @@ if (isset($_GET['id'])) {
     $article = mysqli_fetch_assoc($resultat);
 
     if ($article != NULL) {
-        /*
-         *
-         * Check rate star
-         * */
-        $query = mysqli_query($db,' SELECT rating
-                    FROM star
-                    WHERE id_user = "'.$_SESSION['id'].'" AND id_article = "'.intval($_GET['id']).'"
-        ');
-        $resultatCountRate = mysqli_fetch_assoc($query);
+
+
 
     	require('./views/content/article/article.phtml');
 
     	if (isset($_SESSION['id'])) {
+        /*
+         *
+         * Check rate star
+         *
+         */
+            $query = mysqli_query($db, ' SELECT rating
+                    FROM star
+                    WHERE id_user = "' . $_SESSION['id'] . '" AND id_article = "' . intval($_GET['id']) . '"
+        ');
+            $resultatCountRate = mysqli_fetch_assoc($query);
+
+
     		require('./views/content/article/article_rate/article_rate.phtml');
     		require('./views/content/article/article_comment_form/article_comment_form.phtml');
     	} else {
