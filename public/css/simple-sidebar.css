@@ -215,7 +215,7 @@
     z-index:2;
     opacity: 0;
 }
-.star:hover ~ .star, .star-input:focus ~ .star, .star-container:hover ~ .star, .star:hover {
+.star:hover ~ .star, .star-input:focus ~ .star, .star-container:hover ~ .star, .star:hover, .actif{
     color: #FFC107;
 }
 
