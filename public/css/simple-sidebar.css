@@ -178,6 +178,36 @@
 
 /* Page profil */
 
+<<<<<<< HEAD
+#source
+{
+    padding: 0px;
+}
+
+/* Page liste membres */
+
+.table-striped
+{
+    text-align: center;
+}
+
+.headerSortDown
+{ 
+    background-color: #607D8B;
+    color: white;     
+    font-weight: bold; 
+    background-repeat: no-repeat; 
+    background-position: center right; 
+    padding-left: 20px;     
+    margin-left: -1px; 
+} 
+
+i 
+{
+    margin-left: 5px;
+    cursor: pointer;
+}
+=======
 #source{
     padding: 0px;
 }
@@ -211,7 +241,12 @@
 .star:hover ~ .star, .star-input:focus ~ .star, .star-container:hover ~ .star, .star:hover, .actif{
     color: #FFC107;
 }
+<<<<<<< HEAD
 .delete-com {
     position: relative;
     top: 40px;
 }
+=======
+
+>>>>>>> dev
+>>>>>>> list-user-article

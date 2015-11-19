@@ -1,6 +1,9 @@
 <?php
 session_start();
+<<<<<<< HEAD
 
+=======
+>>>>>>> list-user-article
 /*
  * Connect to db
  */
@@ -47,7 +50,7 @@ $errors = array();
 /*
  * Set access
  */
-$access = array('home', 'article', 'user');
+$access = array('home', 'article', 'user', 'users_view');
 $access_visitor = array('register', 'login');
 $access_member = array('messenger', 'profile', 'article_write', 'logout');
 $access_admin = array('dashboard', 'article_validation', 'article_edit', 'user_list');

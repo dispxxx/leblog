@@ -10,6 +10,10 @@
             <p><span class="glyphicon glyphicon-time"></span>
                 Membre depuis <?php echo intval((time() - strtotime($user['date_register'])) / 86400); ?> jours</p>
 
+<<<<<<< HEAD
+            <p><span class="glyphicon glyphicon-ok"></span> <?php echo $nb_article_v['article_note'];?> article<?php if($nb_article_v['article_note'] > 1){echo "s";}?> publiés</p>
+            <?php require('./controllers/content/user/user_member.php'); ?>
+=======
             <p><span class="glyphicon glyphicon-ok"></span> <?php echo $nb_article_v['article_note']; ?>
                 Article<?php if ($nb_article_v['article_note'] > 1) {
                     echo "s";
@@ -21,6 +25,7 @@
                 <?php
             }
             require('./controllers/content/user/user_member.php'); ?>
+>>>>>>> dev
         </div>
 
 
