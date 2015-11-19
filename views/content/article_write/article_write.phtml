@@ -17,6 +17,13 @@
 				<?php require('./controllers/content/article_write/article_write_category.php');?>
 			</select>
 		</div>
+		<div class="form-group col-xs-12">
+			<label for='thumbnail'>Bandeau</label>
+			<p class="info-thumbnail">
+				Le bandeau fait 1200x300 px, choisissez une image permettant un affichage correcte dans ces dimensions (rapport hauteur/largeur et échelle).
+			</p>
+			<input type='text' name='thumbnail' placeholder="URL de l'image" value='<?php if (isset($thumbnail)) {echo htmlentities($thumbnail);} ?>' id='thumbnail' class='form-control' />
+		</div>
 	</div>
 	<div class="row">
 		<div class="form-group col-xs-12">
