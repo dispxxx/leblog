@@ -178,15 +178,8 @@
 
 /* Page profil */
 
-.user-p
-{
-    font-weight: bold;
-    display: inline-block;
-    margin-right: 5px;
-}
-.star-container {
-
-
+#source{
+    padding: 0px;
 }
 
 .star{
@@ -218,4 +211,7 @@
 .star:hover ~ .star, .star-input:focus ~ .star, .star-container:hover ~ .star, .star:hover, .actif{
     color: #FFC107;
 }
-
+.delete-com {
+    position: relative;
+    top: 40px;
+}
