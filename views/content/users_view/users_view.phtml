@@ -1,10 +1,15 @@
-<div class="row users_view_row">
-	<div class="col-sm-6 users_view_col">
-		<h3>Pseudo utilisateur</h3>
-		<p><a href="?page=user&amp;id=<?=$user['id']?>"><?=$user['surname']?></a></p>
-	</div>
+<div class="row">
 	<div class="col-sm-6">
-		<h3>Nombre d'articles</h3>
-		<p><?=$nbArticles['COUNT(*)']?></p>
+		<table class="table table-striped">
+			<thead>
+				<td>Pseudo</td>
+				<td>Nombre d'articles postés</td>
+			</thead>
+			<tbody>
+				<?php 
+				require('./controllers/content/users_view/users_view_li.php');
+				 ?>	
+			</tbody>
+		</table>			
 	</div>
 </div>
