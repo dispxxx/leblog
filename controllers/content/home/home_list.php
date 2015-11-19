@@ -1,9 +1,9 @@
 <?php
-$query = "SELECT article.id, user.username, title, date_published, content, id_user
-FROM article
-LEFT JOIN user ON article.id_user = user.id
-WHERE date_validation <> \"0000-00-00 00:00:00\"
-ORDER BY date_published DESC LIMIT ". intval($nombreDeMessagesParPage) ." OFFSET ". intval($nombreOffset) ." ";
+$query = "  SELECT article.id, user.username, title, date_published, content, id_user, thumbnail
+            FROM article
+            LEFT JOIN user ON article.id_user = user.id
+            WHERE date_validation <> \"0000-00-00 00:00:00\"
+            ORDER BY date_published DESC LIMIT ". intval($nombreDeMessagesParPage) ." OFFSET ". intval($nombreOffset) ." ";
 $resultat = mysqli_query($db, $query);
 
 if ($resultat) {

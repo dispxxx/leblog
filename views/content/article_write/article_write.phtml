@@ -1,20 +1,39 @@
-<h2>Publiez votre article</h2>
-<p>La validation par un administrateur est nécessaire. Votre article sera publié dans les meilleurs délais :)</p>
+<div class="row">
+	<div class="col-xs-12">
+		<h2>Publiez votre article</h2>
+		<p>La validation par un administrateur est nécessaire. Votre article sera publié dans les meilleurs délais :)</p>
+	</div>
+</div>
 <form method="post" action="?page=article_write&amp;action=article_write" role="form">
-	<div class="form-group">
-		<label for='category'>Catégorie</label>
-		<select name='category' id='category' class='form-control'>
-			<option value="0" selected>Choisissez une catégorie</option>
-			<?php require('./controllers/content/article_write/article_write_category.php');?>
-		</select>
+	<div class="row">
+		<div class="form-group col-xs-12 col-sm-6">
+			<label for='title'>Titre</label>
+			<input type='text' name='title' placeholder='1 à 31 caractères' value='<?php if (isset($title)) {echo htmlentities($title);} ?>' id='title' class='form-control' />
+		</div>
+		<div class="form-group col-xs-12 col-sm-6">
+			<label for='category'>Catégorie</label>
+			<select name='category' id='category' class='form-control'>
+				<option value="0" selected>Choisissez une catégorie</option>
+				<?php require('./controllers/content/article_write/article_write_category.php');?>
+			</select>
+		</div>
+		<div class="form-group col-xs-12">
+			<label for='thumbnail'>Bandeau</label>
+			<p class="info-thumbnail">
+				Le bandeau fait 1200x300 px, choisissez une image permettant un affichage correcte dans ces dimensions (rapport hauteur/largeur et échelle).
+			</p>
+			<input type='text' name='thumbnail' placeholder="URL de l'image" value='<?php if (isset($thumbnail)) {echo htmlentities($thumbnail);} ?>' id='thumbnail' class='form-control' />
+		</div>
 	</div>
-	<div class="form-group">
-		<label for='title'>Titre</label>
-		<input type='text' name='title' placeholder='1 à 31 caractères' value='<?php if (isset($title)) {echo htmlentities($title);} ?>' id='title' class='form-control' />
+	<div class="row">
+		<div class="form-group col-xs-12">
+			<label for='content'>Contenu</label>
+			<textarea rows="15" name='content' placeholder='32 à 2045 caractères' id='content' class='form-control'><?php if (isset($content)) {echo htmlentities($content);} ?></textarea>
+		</div>
 	</div>
-	<div class="form-group">
-		<label for='content'>Contenu</label>
-		<textarea rows="15" name='content' placeholder='32 à 2045 caractères' id='content' class='form-control'><?php if (isset($content)) {echo htmlentities($content);} ?></textarea>
+	<div class="row">
+		<div class="col-xs-12">
+			<button type='submit' class='btn btn-success'>Soumettre</button>
+		</div>
 	</div>
-	<button type='submit' class='btn btn-success'>Soumettre</button>
 </form>
