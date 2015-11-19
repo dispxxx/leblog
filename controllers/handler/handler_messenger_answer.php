@@ -1,3 +1,4 @@
+
 <?php
 	/*
 	 * Content empty verify
@@ -38,7 +39,7 @@
 		$content = mysqli_real_escape_string($db, $content);
 		if ((mysqli_query($db, 'INSERT INTO private_msg(id_recipient, id_sender, id_prev, subject, content)
                                		VALUES ('.$id_recipient.', '.$id_sender.', '.$id_prev.', "'.$subject.'", "'.$content.'")'))) {
-			header('Location: ?page=messenger&succcess=true');
+			header('Location: ?page=messenger&success=true');
 			exit;
 		} else {
 			$errors[] = 'error';

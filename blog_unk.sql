@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `private_msg` (
   `id_sender` int(11) NOT NULL,
   `date_published` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `id_prev` int(11) NOT NULL,
-  `subject` varchar( 63 ) COLLATE utf8_bin NOT NULL,
+  `subject` varchar( 127 ) COLLATE utf8_bin NOT NULL,
   `content` varchar(510) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
@@ -106,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(31) COLLATE utf8_bin NOT NULL,
   `surname` varchar(31) COLLATE utf8_bin NOT NULL,
-  `avatar` varchar(63) COLLATE utf8_bin NOT NULL,
+  `avatar` varchar(127) COLLATE utf8_bin NOT NULL DEFAULT "./public/img/big.png",
   `email` varchar(63) COLLATE utf8_bin NOT NULL,
   `password` varchar(510) COLLATE utf8_bin NOT NULL,
   `username` varchar(31) COLLATE utf8_bin NOT NULL,

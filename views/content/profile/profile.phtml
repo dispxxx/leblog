@@ -1,1 +1,45 @@
-<h2>profile</h2>
+<h2>Profil de <?php if (isset($username)) {echo htmlentities($username);} ?></h2>
+<p>Enregistré le <?php if (isset($date)) {echo htmlentities($date);} ?></p>
+<form method="post" enctype="multipart/form-data" action="?page=profile&action=profile" role="form">
+	<fieldset class="form-group">
+		<legend>Avatar</legend>
+		<img src="<?php if (isset($avatar)) {echo htmlentities($avatar);} ?>" alt="Avatar 200x200 pixels" style="height:200px;width:200px" />
+		<div class="form-group">
+			<label for='source'>Source</label>
+			<input type='file' name='avatar_source' id='source' class='form-control' />
+			<label for='url'>ou URL</label>
+			<input type='url' name='avatar_url' id='url' class='form-control' />
+		</div>
+	</fieldset>
+	<fieldset class="form-group">
+		<legend>Informations personnelles</legend>
+		<div class="form-group">
+			<label for='name'>Nom</label>
+			<input type='text' name='name' placeholder='1 à 31 caractères' value='<?php if (isset($name)) {echo htmlentities($name);} ?>' id='name' class='form-control' />
+		</div>
+		<div class="form-group">
+			<label for='surname'>Prénom</label>
+			<input type='text' name='surname' placeholder='1 à 31 caractères' value='<?php if (isset($surname)) {echo htmlentities($surname);} ?>' id='surname' class='form-control' />
+		</div>
+		<div class="form-group">
+			<label for='email'>E-mail</label>
+			<input type='email' name='email' placeholder='63 caractères maximum' value='<?php if (isset($email)) {echo htmlentities($email);} ?>' id='email' class='form-control' />
+		</div>
+	</fieldset>
+	<fieldset class="form-group">
+		<legend>Modifier votre mot de passe</legend>
+		<div class="form-group">
+			<label for='mdp1'>Ancien mot de passe</label>
+			<input type='password' name='password-old' placeholder='Votre ancien mot de passe' id='mdp1' class='form-control' />
+		</div>
+		<div class="form-group">
+			<label for='mdp2'>Nouveau mot de passe</label>
+			<input type='password' name='password-new' placeholder='8 à 31 caractères' id='mdp2' class='form-control' />
+		</div>
+		<div class="form-group">
+			<label for='mdp3'>Vérification du nouveau mot de passe</label>
+			<input type='password' name='password-new2' placeholder='Resaisir le nouveau mot de passe' id='mdp3' class='form-control' />
+		</div>
+	</fieldset>
+	<button type='submit' class='btn btn-default'>Enregistrer les modifications</button>
+</form>
