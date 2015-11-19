@@ -8,7 +8,7 @@
                 <h4 class="modal-title" id="myModalLabel">Supprimer le commentaire</h4>
             </div>
             <div class="modal-body">
-                Confirmer la suppression du commentaire <?php echo htmlentities($comment['user_username']);?> ?
+                Confirmer la suppression du commentaire de <?php echo htmlentities($comment['user_username']);?> ?
             </div>
             <div class="modal-footer">
                 <form method="post" action="<?php echo '?page=article&id='.intval($_GET['id']).'&action=comment_delete' ?>">
