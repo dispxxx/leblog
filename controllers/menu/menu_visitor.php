@@ -1,2 +1,4 @@
 <?php
-require('./views/menu/menu_visitor.phtml');
+if(!isset($_SESSION['id'])){
+    require('./views/menu/menu_visitor.phtml');
+}
