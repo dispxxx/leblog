@@ -1,6 +1,6 @@
 <h2>Profil de <?php if (isset($username)) {echo htmlentities($username);} ?></h2>
 <p>Enregistré le <?php if (isset($date)) {echo htmlentities($date);} ?></p>
-<form method="post" enctype="multipart/form-data" action="?page=profile&action=profile" role="form">
+<form method="post" enctype="multipart/form-data" action="?page=profile&amp;action=profile" role="form">
 	<fieldset class="form-group">
 		<legend>Avatar</legend>
 		<img src="<?php if (isset($avatar)) {echo htmlentities($avatar);} ?>" alt="Avatar 200x200 pixels" style="height:200px;width:200px" />
