@@ -68,22 +68,12 @@ if (count($errors) == 0) {
 if ($success) {
 
 	/*
-	/* Get all notes linked to the article
+	/* Update the average rating of the article
 	*/
-	$query = mysqli_query($db, 'SELECT rating
+	$query = mysqli_query($db, 'SELECT AVG(rating) AS rating
 								FROM star
 								WHERE id_article  ='. $id_article);
-
-	/*
-	/* Do the average
-	*/
-	$sum = 0;
-	$count = 0;
-	while ($rating = mysqli_fetch_assoc($query)) {
-		$sum += $rating['rating'];
-		$count++;
-	}
-	$rating = $sum / $count;
+	$rating = mysqli_fetch_assoc($query)['rating'];
 
 	/*
 	/* Update the rating in the article table
