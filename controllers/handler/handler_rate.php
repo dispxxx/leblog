@@ -1,6 +1,8 @@
 <?php
 $id_user = intval($_SESSION['id']);
 
+
+
 /*
 /* Check rating
 */

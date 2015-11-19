@@ -5,22 +5,12 @@
 			<form action="?page=article&id=<?php echo $article['id'] ?>&action=rate" method="POST" class="text-right">
 				<input type="hidden" name="id_article" value="<?php echo $article['id'] ?>">
                 <span class="star-container">
-                   <input class="star-input" type="radio" name="rating" value="5" /><span class="star glyphicon glyphicon-star"></span>
+                    <span class="star glyphicon glyphicon-star"><input class="star-input" type="radio" name="rating" value="5" /></span>
+                    <span class="star glyphicon glyphicon-star"><input class="star-input" type="radio" name="rating" value="4" /></span>
+                    <span class="star glyphicon glyphicon-star"><input class="star-input" type="radio" name="rating" value="3" /></span>
+                    <span class="star glyphicon glyphicon-star"><input class="star-input" type="radio" name="rating" value="2" /></span>
+                    <span class="star glyphicon glyphicon-star"><input class="star-input" type="radio" name="rating" value="1" /></span>
                 </span>
-				<span class="star-container">
-                    <input class="star-input" type="radio" name="rating" value="4" /><span class="star glyphicon glyphicon-star"></span>
-                </span>
-                <span class="star-container">
-                    <input class="star-input" type="radio" name="rating" value="3" /><span class="star glyphicon glyphicon-star"></span>
-                </span>
-                <span class="star-container">
-                    <input class="star-input" type="radio" name="rating" value="2" /><span class="star glyphicon glyphicon-star"></span>
-                </span>
-                <span class="star-container">
-                    <input class="star-input" type="radio" name="rating" value="1" /><span class="star glyphicon glyphicon-star"></span>
-                </span>
-
-				<button class="btn btn-default" type="submit">Submit</button>
 			</form>
 		</div>
 	</div>
