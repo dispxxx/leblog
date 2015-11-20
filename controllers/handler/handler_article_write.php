@@ -43,18 +43,17 @@ if (isset($_POST['category'], $_POST['title'], $_POST['thumbnail'], $_POST['cont
 	{
 		if ( $thumbnail = @getimagesize($_POST['thumbnail']) )
 		{
-			if ($thumbnail[0] > 2400 || $thumbnail[0] < 600 || $thumbnail[1] > 600 || $thumbnail[1] < 150 )
+			if ($thumbnail[0] != 1200 || $thumbnail[1] != 300)
 			{
 				$errors[] = "thumbnail_dimensions";
 			}
-			else if (filesize($_POST['thumbnail']) > 200000)
+			else if (filesize($_POST['thumbnail']) > 2e6)
 			{
 				$errors[] = "thumbnail_size";
 			}
 			else
 			{
 				$thumbnail = mysqli_real_escape_string($db, $_POST['thumbnail']);
-				$change=true;
 			}
 		}
 		else

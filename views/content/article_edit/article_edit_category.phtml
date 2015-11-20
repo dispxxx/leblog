@@ -1,0 +1,6 @@
+<option value="<?php echo $display_category['id'];?>"
+	<?php if ($display_category['id'] =  $article['id_category']) {
+		echo 'selected';
+	}?>>
+	<?php echo htmlentities($display_category['name']);?>
+</option>
