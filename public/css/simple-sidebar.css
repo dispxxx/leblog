@@ -3,11 +3,11 @@
  * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
+ */ 
 
  a:hover {
     text-decoration: none;
- }
+ } 
 
 /* Toggle Styles */
 
@@ -131,11 +131,11 @@
     margin: 50px -35px 0;
     padding-top: 15px;
     background: #607D8B url('../img/bg.png') repeat;
-    color: #fff;
+    color: #fff;    
 }
 
 #wrapper {
-    padding-left: 250px;
+    padding-left: 250px;    
 }
 
 #wrapper.toggled {
@@ -151,8 +151,8 @@
 }
 
 #page-content-wrapper {
-    padding: 20px;
-    position: relative;
+    padding: 20px; 
+    position: relative;     
 }
 
 #wrapper.toggled #page-content-wrapper {
