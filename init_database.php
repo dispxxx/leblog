@@ -2,5 +2,5 @@
 define("DB_HOST", "localhost");
 define("DB_USERNAME", "root");
 define("DB_PASSWORD", "troiswa");
-define("DB_NAME", "projet-groupe");
+define("DB_NAME", "blog_unk");
  ?>
