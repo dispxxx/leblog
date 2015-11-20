@@ -18,11 +18,12 @@ $nombreDePages = ceil($totalDesCommentaires / $nombreDeCommentairesParPage);
 $count = 0;
 
 $query = "SELECT user.username AS user_username, comments.content AS comments_content, comments.date_published AS comments_date, comments.id AS id, comments.id_user
-FROM comments
-LEFT JOIN article ON comments.id_article = article.id
-LEFT JOIN user ON comments.id_user = user.id
-WHERE comments.id_article = '". intval($_GET['id']) ."'
-LIMIT ". intval($nombreDeCommentairesParPage) ." OFFSET ". intval($nombreOffComSet);
+			FROM comments
+			LEFT JOIN article ON comments.id_article = article.id
+			LEFT JOIN user ON comments.id_user = user.id
+			WHERE comments.id_article = '". intval($_GET['id']) ."'
+			ORDER BY comments.date_published DESC
+			LIMIT ". intval($nombreDeCommentairesParPage) ." OFFSET ". intval($nombreOffComSet);
 
 $resultat = mysqli_query($db, $query);
 
