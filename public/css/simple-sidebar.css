@@ -119,16 +119,11 @@
 }
 
 .header {
-    min-height: 115px;    
-    width: 108%;
-    margin: -20px -35px 50px;
+    min-height: 115px;      
+    margin: -0px 0px 50px;
     padding-top: 20px;
     background: #607D8B url('../img/bg.png') repeat;
     color: #fff;
-}
-
-.header .row {
-    margin-right: 0px;
 }
 
 .footer {
