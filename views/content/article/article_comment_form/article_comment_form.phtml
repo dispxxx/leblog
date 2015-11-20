@@ -3,7 +3,7 @@
 
         <form method="post" action="<?php echo '?page=article&id='.intval($_GET['id']).'&action=comment_write' ?>" role="form">
             <div class="form-group">
-                <textarea class="form-control" rows="3" placeholder="510 caractères maximum" name="comment"></textarea>
+                <textarea class="form-control" rows="3" placeholder="510 caractères maximum" name="comment"><?php echo htmlentities($comment); ?></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
