@@ -9,7 +9,7 @@ if (isset($_GET['id'])) {
     $article = mysqli_fetch_assoc($resultat);
     
     if(isset($_GET['success']) &&  $_GET['success'] == true) {
-    require('./views/content/article/success/success.phtml');
+    	require('./views/content/article/success/success.phtml');
     }
     if(count($errors)>0) {
     	for($i = 0; $i < count($errors); $i++) {
