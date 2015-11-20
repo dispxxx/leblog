@@ -178,21 +178,17 @@
 
 /* Page profil */
 
-<<<<<<< HEAD
-#source
-{
+#source {
     padding: 0px;
 }
 
 /* Page liste membres */
 
-.table-striped
-{
+.table-striped {
     text-align: center;
 }
 
-.headerSortDown
-{ 
+.headerSortDown { 
     background-color: #607D8B;
     color: white;     
     font-weight: bold; 
@@ -202,17 +198,12 @@
     margin-left: -1px; 
 } 
 
-i 
-{
+i {
     margin-left: 5px;
     cursor: pointer;
 }
-=======
-#source{
-    padding: 0px;
-}
 
-.star{
+.star {
     font-size: 2.5rem;
     float: right;
     width: 25px;
@@ -221,6 +212,7 @@ i
     display: inline-block;
     padding:5px;
 }
+
 .star-input {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -238,15 +230,12 @@ i
     z-index:2;
     opacity: 0;
 }
+
 .star:hover ~ .star, .star-input:focus ~ .star, .star-container:hover ~ .star, .star:hover, .actif{
     color: #FFC107;
 }
-<<<<<<< HEAD
+
 .delete-com {
     position: relative;
     top: 40px;
 }
-=======
-
->>>>>>> dev
->>>>>>> list-user-article
