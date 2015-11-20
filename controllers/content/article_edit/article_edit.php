@@ -1,10 +1,7 @@
 <?php 
 if (isset($_GET['id'])) {
 	$id_article = intval($_GET['id']);
-} else {
-	header('Location: ?page=home');
-	exit;
-}
+} 
 
 if(count($errors)>0){
     for($i = 0; $i < count($errors); $i++){
