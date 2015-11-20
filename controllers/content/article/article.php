@@ -6,6 +6,7 @@ if (isset($_GET['id'])) {
                 WHERE article.id = '" . intval($_GET['id']) . "'";
     
     $resultat = mysqli_query($db, $query);
+
     $article = mysqli_fetch_assoc($resultat);    
     if(isset($_GET['success']) &&  $_GET['success'] == true) {
     	require('./views/content/article/success/success.phtml');
