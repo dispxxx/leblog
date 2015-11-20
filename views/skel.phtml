@@ -95,9 +95,10 @@
 </head>
 
 <body>
-	<?php require('./controllers/header/header.php'); ?>
-<div id="wrapper" class="toggled">
 
+	
+<div id="wrapper" class="toggled">
+	<?php require('./controllers/menu/menu.php'); ?>
 		
 
 	<!-- Page Content -->
@@ -105,7 +106,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-12">
-				<?php require('./controllers/menu/menu.php'); ?>
+				<?php require('./controllers/header/header.php'); ?>
 				<?php require('./controllers/content/content.php'); ?>
 				<?php require('./controllers/footer/footer.php'); ?>
 				</div>
