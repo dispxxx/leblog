@@ -1,8 +1,6 @@
 <div class="">
     <div class="col-xs-12 col-sm-offset-3 col-sm-6 col-lg-offset-4 col-lg-4">
         <div class="thumbnail text-center">
-
-
             <img src="<?php echo htmlentities($user['avatar']); ?>" alt="" class="img-responsive">
 
             <h3 class="alert bg-primary"><?php echo htmlentities(ucfirst($user['username'])) ?></h3>
@@ -10,10 +8,13 @@
             <p><span class="glyphicon glyphicon-time"></span>
                 Membre depuis <?php echo intval((time() - strtotime($user['date_register'])) / 86400); ?> jours</p>
 
+            <p><span class="glyphicon glyphicon-ok"></span> <?php echo $nb_article_v['article_note'];?> article<?php if($nb_article_v['article_note'] > 1){echo "s";}?> publiés</p>
+            <?php require('./controllers/content/user/user_member.php'); ?>
+
             <p><span class="glyphicon glyphicon-ok"></span> <?php echo $nb_article_v['article_note']; ?>
                 Article<?php if ($nb_article_v['article_note'] > 1) {
                     echo "s";
-                } ?> publié</p>
+                } ?> publié(s)</p>
             <?php if ($nb_article_v['article_note'] > 0) {
                 ?>
                 <p><span class="glyphicon glyphicon-star"></span> Score: <strong><?php echo (round($note_moyenne * 10)/10); ?></strong> /
@@ -22,10 +23,7 @@
             }
             require('./controllers/content/user/user_member.php'); ?>
         </div>
-
-
     </div>
     <div class="col-xs-12 col-sm-6">
-
     </div>
 </div>

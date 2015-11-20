@@ -47,7 +47,7 @@ if (isset($_POST['category'], $_POST['title'], $_POST['thumbnail'], $_POST['cont
 			{
 				$errors[] = "thumbnail_dimensions";
 			}
-			else if (filesize($_POST['thumbnail']) > 26000)
+			else if (filesize($_POST['thumbnail']) > 200000)
 			{
 				$errors[] = "thumbnail_size";
 			}

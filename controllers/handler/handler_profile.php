@@ -15,10 +15,10 @@
 		// Pas de DB images pour upload et traiter l'image, code actuel pour fichiers dans le répertoire racine
 		if (isset($_FILES['avatar_source']) && $_FILES['avatar_source']['name'] != "") {
 			if ( $image = @getimagesize($_FILES['avatar_source']['name']) ) { // vérif fichier image, @ désactive l'erreur renvoyée par la fonction
-				if ($image[0] > 200 || $image[1] > 200) { // largeur et hauteur image
+				if ($image[0] > 350 || $image[1] > 350) { // largeur et hauteur image
 					$errors[] = "avatar_dimension";
 				}
-				else if ($_FILES['avatar_source']['size'] > 26000) { // poids image
+				else if ($_FILES['avatar_source']['size'] > 100000) { // poids image
 					$errors[] = "avatar_taille";
 				}
 				else {

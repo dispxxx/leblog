@@ -3,6 +3,49 @@
 
 <head>
 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Blog Post - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="public/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link href="public/css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Tinymce -->
+    <script type="text/javascript" src="public/js/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript">
+        /*function tinymcefunc($plugins){
+            tinymce.init({
+                selector: "textarea",
+                language: "fr_FR",
+                images_upload_url: "./controllers/handler/handler_img.php",
+                plugins: [
+                    "advlist autolink lists link image charmap print preview anchor",
+                    "searchreplace visualblocks code fullscreen",
+                    "insertdatetime media table contextmenu paste jbimages"
+                ],
+                menubar: false,
+                toolbar: $plugins
+            });
+        }
+        tinymcefunc("insertfile undo redo styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image jbimages");*/
+
+    </script>
+    <!-- END Tinymce -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,7 +92,6 @@
 	</script>
 	<!-- END Tinymce -->
 
-
 </head>
 
 <body>
@@ -77,6 +119,10 @@
 
 </div>
 
+<!-- jQuery -->
+<script src="public/js/jquery.js"></script>
+<script src="public/js/jquery.tablesorter.js"></script>
+
 <!-- Bootstrap Core JavaScript -->
 <script src="public/js/bootstrap.min.js"></script>
 
@@ -95,6 +141,16 @@
 	})
 </script>
 
+<!-- List user Toogle -->
+<script>
+    $(document).ready(function() 
+    { 
+        $("#myTable").tablesorter(); 
+    } 
+); 
+   
+</script>
+
 <!-- Google captcha -->
 <script src='https://www.google.com/recaptcha/api.js'></script>
 
@@ -102,4 +158,3 @@
 </body>
 
 </html>
-

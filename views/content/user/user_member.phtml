@@ -2,7 +2,7 @@
 <a title="message privé" href="" data-toggle="modal" data-target="#msg" class="btn btn-default"><span class="glyphicon glyphicon-bullhorn"></span></a>
 <?php require('./controllers/content/user/user_admin.php'); ?>
 
-<form action="?page=user&id=<?php echo $user['id_user'];?>&action=user_messenger" method="post">
+<form action="?page=user&amp;id=<?php echo $user['id_user'];?>&amp;action=user_messenger" method="post">
     <div class="modal fade" id="msg" tabindex="-1" role="dialog"
          aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
