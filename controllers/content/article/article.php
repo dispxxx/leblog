@@ -6,8 +6,7 @@ if (isset($_GET['id'])) {
                 WHERE article.id = '" . intval($_GET['id']) . "'";
     
     $resultat = mysqli_query($db, $query);
-    $article = mysqli_fetch_assoc($resultat);
-    
+    $article = mysqli_fetch_assoc($resultat);    
     if(isset($_GET['success']) &&  $_GET['success'] == true) {
     	require('./views/content/article/success/success.phtml');
     }
@@ -16,13 +15,8 @@ if (isset($_GET['id'])) {
         	require('./views/content/article/errors/'.$errors[$i].'.phtml');
     	}
     }
-
     if ($article != NULL) {
-
-
-
     	require('./views/content/article/article.phtml');
-
     	if (isset($_SESSION['id'])) {
         /*
          *
@@ -34,14 +28,11 @@ if (isset($_GET['id'])) {
                     WHERE id_user = "' . $_SESSION['id'] . '" AND id_article = "' . intval($_GET['id']) . '"
         ');
             $resultatCountRate = mysqli_fetch_assoc($query);
-
-
     		require('./views/content/article/article_rate/article_rate.phtml');
     		require('./views/content/article/article_comment_form/article_comment_form.phtml');
     	} else {
     		require('./views/content/article/article_comment_form/article_comment_form_logout.phtml');
     	}
-
         $query = "  SELECT COUNT(*)
                     FROM comments
                     LEFT JOIN article ON comments.id_article = article.id
