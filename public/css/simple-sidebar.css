@@ -178,11 +178,32 @@
 
 /* Page profil */
 
-#source{
+#source {
     padding: 0px;
 }
 
-.star{
+/* Page liste membres */
+
+.table-striped {
+    text-align: center;
+}
+
+.headerSortDown { 
+    background-color: #607D8B;
+    color: white;     
+    font-weight: bold; 
+    background-repeat: no-repeat; 
+    background-position: center right; 
+    padding-left: 20px;     
+    margin-left: -1px; 
+} 
+
+i {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.star {
     font-size: 2.5rem;
     float: right;
     width: 25px;
@@ -191,6 +212,7 @@
     display: inline-block;
     padding:5px;
 }
+
 .star-input {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -208,9 +230,11 @@
     z-index:2;
     opacity: 0;
 }
+
 .star:hover ~ .star, .star-input:focus ~ .star, .star-container:hover ~ .star, .star:hover, .actif{
     color: #FFC107;
 }
+
 .delete-com {
     position: relative;
     top: 40px;
