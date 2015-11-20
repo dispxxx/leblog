@@ -1,0 +1,39 @@
+<div class="row">
+	<div class="col-xs-12">
+		<h2>Editer l'article</h2>
+	</div>
+</div>
+<form method="post" action="?page=article_edit&amp;action=article_edit" role="form">
+	<input type="hidden" name="id" value="<?= $id_article ?>">
+	<div class="row">
+		<div class="form-group col-xs-12 col-sm-6">
+			<label for='title'>Titre</label>
+			<input type='text' name='title' placeholder='1 à 31 caractères' value='<?php echo htmlentities($article['title']); ?>' id='title' class='form-control' />
+		</div>
+		<div class="form-group col-xs-12 col-sm-6">
+			<label for='category'>Catégorie</label>
+			<select name='category' id='category' class='form-control'>
+				<option value="0" selected>Choisissez une catégorie</option>
+				<?php require('./controllers/content/article_edit/article_edit_category.php');?>
+			</select>
+		</div>
+		<div class="form-group col-xs-12">
+			<label for='thumbnail'>Bandeau</label>
+			<p class="info-thumbnail">
+				Le bandeau fait 1200x300 px, choisissez une image permettant un affichage correcte dans ces dimensions (rapport hauteur/largeur et échelle).
+			</p>
+			<input type='text' name='thumbnail' placeholder="URL de l'image" value='<?php echo htmlentities($article['thumbnail']); ?>' id='thumbnail' class='form-control' />
+		</div>
+	</div>
+	<div class="row">
+		<div class="form-group col-xs-12">
+			<label for='content'>Contenu</label>
+			<textarea rows="15" name='content' placeholder='32 à 2045 caractères' id='content' class='form-control'><?php echo htmlentities($article['content']); ?></textarea>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<button type='submit' class='btn btn-success'>Soumettre</button>
+		</div>
+	</div>
+</form>
